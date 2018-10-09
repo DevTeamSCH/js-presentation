@@ -200,6 +200,225 @@ delay(500).then(() => console.log('500'))`}
         </Slide>
 
 
+        <Slide transition={["zoom"]} bgColor="primary">
+          <Heading size={1} caps lineHeight={1} textColor="secondary">
+            React.Js
+          </Heading>
+          <Text margin="10px 0 0" textColor="tertiary" bold>
+            how should I react to this
+          </Text>
+        </Slide>
+
+
+        <Slide className="slide" transition={["fade"]} bgColor="tertiary">
+          <Heading size={4} lineHeight={1} textColor="secondary">
+            Starter application
+          </Heading>
+          <Text className="slide-body">
+            index.html
+          </Text>
+          <CodePane className="codeStatic" textSize={18} lang="javascript"
+            source={"<div id=\"root\"></div>"}
+          />
+          <Text className="slide-body">
+            index.js
+          </Text>
+          <CodePane className="codeStatic" textSize={18} lang="javascript"
+            source={`import React from 'react'
+import ReactDOM from 'react-dom'
+
+ReactDOM.render(
+  <h1>Hello, world!</h1>,
+  document.getElementById('root')
+)`}
+          />
+        </Slide>
+
+
+        <Slide className="slide" transition={["fade"]} bgColor="tertiary">
+          <Heading size={4} lineHeight={1} textColor="secondary">
+            Complex starter
+          </Heading>
+          <CodePane className="codeStatic" textSize={18} lang="javascript"
+            source={`import React from 'react'
+import ReactDOM from 'react-dom'
+
+const element = <h1>Hello, world!</h1>
+
+ReactDOM.render(
+  element,
+  document.getElementById('root')
+)`}
+          />
+        </Slide>
+
+
+        <Slide className="slide" transition={["fade"]} bgColor="tertiary">
+          <Heading size={4} lineHeight={1} textColor="secondary">
+            With variables
+          </Heading>
+          <CodePane className="codeStatic" textSize={18} lang="javascript"
+            source={`import React from 'react'
+import ReactDOM from 'react-dom'
+
+const name = "You"
+const element = <h1>Hello, {name}!</h1>
+
+ReactDOM.render(
+  element,
+  document.getElementById('root')
+)`}
+          />
+        </Slide>
+
+
+        <Slide className="slide" transition={["fade"]} bgColor="tertiary">
+          <Heading size={4} lineHeight={1} textColor="secondary">
+            Such hard very difficult much easy
+          </Heading>
+          <CodePane className="codeStatic" textSize={18} lang="javascript"
+            source={`import React from 'react'
+import ReactDOM from 'react-dom'
+const imageUrl = "https://cataas.com/cat"
+
+const element = (
+  <div>
+    <h1 className="greeting">
+      Hello, world!
+    </h1>
+    <img src={imageUrl} />
+  </div>
+);
+
+ReactDOM.render(
+  element,
+  document.getElementById('root')
+)`}
+          />
+        </Slide>
+
+
+        <Slide transition={["zoom"]} bgColor="primary">
+          <Heading size={1} caps lineHeight={1} textColor="secondary">
+            Component vs Element
+          </Heading>
+          <Text margin="10px 0 0" textColor="tertiary" bold>
+            Getting pretty serious
+          </Text>
+        </Slide>
+
+
+        <Slide className="slide" transition={["fade"]} bgColor="tertiary">
+          <Heading size={4} lineHeight={1} textColor="secondary">
+            Element
+          </Heading>
+          <CodePane className="codeStatic" textSize={18} lang="javascript"
+            source={`import React from 'react'
+const Item = (props) => (
+  <li>
+    {props.title}
+  </li>
+)
+
+export default Item`}
+          />
+          <CodePane className="codeStatic" textSize={18} lang="javascript"
+            source={`import Item from './Item'
+...
+...
+<Item title='Learn React' />`}
+          />
+        </Slide>
+
+
+        <Slide className="slide" transition={["fade"]} bgColor="tertiary">
+          <Heading size={4} lineHeight={1} textColor="secondary">
+            Component
+          </Heading>
+          <CodePane className="codeStatic" textSize={18} lang="javascript"
+            source={`import React, { Component } from 'react'
+class Todo extends Component {
+  contructor(props) {
+    super(props)
+
+    this.state = {
+      todos: []
+    }
+  }
+
+  render() {
+    return (
+      <div>
+        {this.state.todos.map(todo => (
+          <Item title={todo} />
+        ))}
+      </div>
+    )
+  }
+}
+
+export default Todo`}
+          />
+          <CodePane className="codeStatic" textSize={18} lang="javascript"
+            source={"<Todo />"}
+          />
+        </Slide>
+
+
+        <Slide className="slide" transition={["fade"]} bgColor="tertiary">
+          <Heading size={4} lineHeight={1} textColor="secondary">
+            Handlers
+          </Heading>
+          <Text className="slide-body">
+            You can't handle me
+          </Text>
+          <CodePane className="codeStatic" textSize={18} lang="javascript"
+            source={`class App extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      name: 'Handler: '
+    }
+
+    this.handleClick2 = this.handleClick2.bind(this)
+  }
+
+  handleClick1() {
+    alert(this.state.name + 1)
+  }
+
+  handleClick2() {
+    alert(this.state.name + 2)
+  }
+
+  handleClick3 = () => {
+    alert(this.state.name + 3)
+  }
+
+  render() {
+    return (
+      <div>
+        <button onClick={() => alert(this.state.name + 0)}>0</button>
+        <button onClick={() => this.handleClick1()}>1</button>
+        <button onClick={this.handleClick2}>2</button>
+        <button onClick={this.handleClick3}>3</button>
+      </div>
+    )
+  }
+}`}
+          />
+        </Slide>
+
+
+        <Slide bgImage="https://media.giphy.com/media/upg0i1m4DLe5q/giphy.gif" transition={["zoom"]} bgColor="primary">
+          <Heading size={1} caps lineHeight={1} textColor="primary">
+            Thats all folks
+          </Heading>
+          <Text margin="10px 0 0" textColor="tertiary" bold>
+            Next: lifeCycle, input, redux
+          </Text>
+        </Slide>
+
       </Deck>
     );
   }
