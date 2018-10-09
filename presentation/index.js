@@ -4,7 +4,10 @@ import {
   Slide,
   Heading,
   Text,
-  CodePane
+  CodePane,
+  BlockQuote,
+  Cite,
+  Quote
 } from "spectacle";
 import createTheme from "spectacle/lib/themes/default";
 import Interpeter from "./interpeter";
@@ -30,8 +33,16 @@ export default class Presentation extends React.Component {
             ES6+ attacks
           </Heading>
           <Text margin="10px 0 0" textColor="tertiary" bold>
-            Welcome the future!
+            alias JS for dummies
           </Text>
+          <BlockQuote>
+            <Quote textColor="quaternary" textSize={50}>
+              The future is now, old man!
+            </Quote>
+            <Cite textAlign="right">
+              Dewey
+            </Cite>
+          </BlockQuote>
         </Slide>
 
 
