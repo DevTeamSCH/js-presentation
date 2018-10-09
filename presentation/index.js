@@ -27,10 +27,10 @@ export default class Presentation extends React.Component {
       <Deck transition={["zoom", "slide"]} transitionDuration={500} theme={theme}>
         <Slide transition={["zoom"]} bgColor="primary">
           <Heading size={1} caps lineHeight={1} textColor="secondary">
-            ES6 attacks
+            ES6+ attacks
           </Heading>
           <Text margin="10px 0 0" textColor="tertiary" bold>
-            alias JS for dummies
+            Welcome the future!
           </Text>
         </Slide>
 
@@ -206,6 +206,10 @@ delay(500).then(() => console.log('500'))`}
           </Heading>
           <Text margin="10px 0 0" textColor="tertiary" bold>
             how should I react to this
+          </Text>
+          <Text margin="10px 0 0" textColor="tertiary">
+            <a target="_blank" href="https://stackblitz.com" className="link">StackBlitz</a><br />
+            <a target="_blank" href="https://codesandbox.io" className="link">Codesandbox</a>
           </Text>
         </Slide>
 
